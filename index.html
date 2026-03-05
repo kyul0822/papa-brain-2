@@ -1,85 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+
 <meta charset="utf-8">
-<title>기억력 게임</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="manifest" href="manifest.json">
+<title>아빠 기억훈련</title>
 
-<style>
-body{
-font-family:sans-serif;
-text-align:center;
-background:#eef7f1;
-}
+<link rel="stylesheet" href="style.css">
 
-button{
-font-size:20px;
-padding:15px;
-margin:10px;
-}
-
-img{
-width:200px;
-margin:10px;
-}
-</style>
 </head>
 
 <body>
 
-<h1>오늘의 기억 게임</h1>
+<h1>오늘의 기억훈련</h1>
 
-<button onclick="showTopic('nature')">자연</button>
-<button onclick="showTopic('fish')">민물고기</button>
-<button onclick="showTopic('food')">음식</button>
+<h2 id="topicTitle"></h2>
 
-<div id="game"></div>
+<div id="game" class="grid"></div>
 
-<script>
-
-const data = {
-
-nature:[
-["산","https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg"],
-["강","https://upload.wikimedia.org/wikipedia/commons/6/6f/River.jpg"],
-["나무","https://upload.wikimedia.org/wikipedia/commons/a/a8/Tree.jpg"]
-],
-
-fish:[
-["붕어","https://upload.wikimedia.org/wikipedia/commons/b/b7/Carassius_carassius.jpg"],
-["잉어","https://upload.wikimedia.org/wikipedia/commons/3/3a/Common_carp.jpg"],
-["메기","https://upload.wikimedia.org/wikipedia/commons/5/5e/Catfish.jpg"]
-],
-
-food:[
-["김치","https://upload.wikimedia.org/wikipedia/commons/8/88/Kimchi.jpg"],
-["라면","https://upload.wikimedia.org/wikipedia/commons/a/a8/Ramen.jpg"],
-["만두","https://upload.wikimedia.org/wikipedia/commons/0/0c/Dumplings.jpg"]
-]
-
-}
-
-function showTopic(topic){
-
-let html=""
-
-data[topic].forEach(item=>{
-
-html+=`
-<div>
-<img src="${item[1]}">
-<h2>${item[0]}</h2>
-</div>
-`
-
-})
-
-document.getElementById("game").innerHTML=html
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
